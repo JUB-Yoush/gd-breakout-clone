@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 var direction: Vector2 = Vector2.ZERO
 var velocity: Vector2 = Vector2.ZERO
-var speed: float = 400
+var speed: float = 500
 
 func _ready() -> void:
 	pass
