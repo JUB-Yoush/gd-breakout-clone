@@ -4,6 +4,7 @@ var direction: Vector2 = Vector2.ZERO
 var velocity: Vector2 = Vector2.ZERO
 var speed: float = 500
 var lives: int = 3
+var in_game = true
 signal start_game
 func _ready() -> void:
 	emit_signal("start_game")
@@ -11,9 +12,10 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
-	direction = get_dir()
-	velocity = direction * speed
-	move_and_slide(velocity)
+	if in_game == true:
+		direction = get_dir()
+		velocity = direction * speed
+		move_and_slide(velocity)
 
 
 func get_dir():

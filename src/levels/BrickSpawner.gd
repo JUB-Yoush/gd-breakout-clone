@@ -1,6 +1,7 @@
 extends Node2D
 
 onready var brickScene: PackedScene = preload("res://src/objects/Brick.tscn")
+var level: int 
 export var spawn_width = 10
 export var spawn_height = 5
 var tile_sizeX = 48
