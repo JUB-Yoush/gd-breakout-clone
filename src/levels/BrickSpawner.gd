@@ -5,6 +5,8 @@ export var spawn_width = 10
 export var spawn_height = 5
 var tile_sizeX = 48
 var tile_sizeY = 16
+signal all_blocks_broke
+
 
 func _ready() -> void:
 	make_bricks()
@@ -20,3 +22,7 @@ func make_bricks()-> void:
 			add_child(brick)
 			
 			 
+func _process(delta: float) -> void:
+	var children = get_child_count()
+	if children == 0:
+		emit_signal("all_blocks_broke")
